@@ -43,8 +43,20 @@ var numString = num.join("");
 var specString = special.join("");
 
 // combine arrays into string to randomize
-var random = (capitalString + lowerString + numString + specString);
-console.log(random);
+var passwordString = (capitalString + lowerString + numString + specString);
+
+// empty array to place results of for loop
+var randomPassword = []
+
+for (var i = 0; i < input; i++) {
+  var passwordArray = passwordString[Math.floor(Math.random() * passwordString.length)];
+  randomPassword.push(passwordArray);
+
+  }
+
+pw = randomPassword.join("");
+
+
 
 
 }
@@ -60,7 +72,7 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = pw;
 
 }
 
